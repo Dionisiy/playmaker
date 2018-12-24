@@ -1,0 +1,24 @@
+.pix-colr, .pix-colrhvr:hover,.price-table article:hover h3,.breadcrumbs ul li.pix-active,#footer p a:hover,
+/* New Clases Add*/.event-listing article:hover .text .pix-post-title a,.cs-post-title a,.pagination .active,
+.is-countdown span {
+	color: #e95842 !important;
+}
+
+
+
+.pix-bdrcolr ,.tabs.horizontal .nav-tabs li.active,.address-info .text,.subtitle h1,.about-us article .text,blockquote,
+.pagination > ul > li > a:before,.pagination > ul > li > span.active:before{
+	border-color: #e95842 !important;
+}
+
+#banner .flexslider figcaption .pix-desc h3 span
+/* New Clases Add*/ {
+	 box-shadow: -10px  0 0 #e95842,10px  0 0 #e95842 !important;   
+}
+.our-team-sec article:hover figure figcaption .pix-post-title a{
+	 box-shadow: -10px  0 0 #e95842,10px  0 0 #e95842 !important;   
+}
+
+#sliderpagination ul li:before{
+    border-color: transparent #e95842 !important;
+}

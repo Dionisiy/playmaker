@@ -1,0 +1,14 @@
+.left-side iframe {
+    margin: 0 auto;
+    width: 100%;
+}
+iframe .soccer {
+    width: 100%!important;
+}
+iframe #fsbody {
+    width: 100%!important;
+}
+
+.fs-table table {
+    width: 100%!important;
+}
