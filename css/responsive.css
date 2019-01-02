@@ -829,7 +829,10 @@ a.pp_close { right: 7%!important; top: 10px!important; }
 		display:inline-block;
 	}
 	header.pix-heading-title h2 {
-		margin-bottom:10px;
+		font-size: 1.5rem;
+		text-align: center;
+		padding: 20px;
+		margin-bottom: 0;
 	}
 	.blog-vertical header.pix-heading-title h2{
 		width:auto;

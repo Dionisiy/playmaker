@@ -38,7 +38,13 @@ body {
 	top:200px;
 }
 .container {
-    width: 1150px;
+    width: 1160px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }
 .right-advertising-area {
     float:right;
@@ -156,7 +162,7 @@ header.pix-heading-title {
     /*margin-bottom: 20px;*/
     border-bottom:;
     padding: 0px 0px 8px 0px;
-    border-bottom: 1px solid #dbdbdb;
+    /*border-bottom: 1px solid #dbdbdb;*/
 }
 header.pix-heading-title h2 {
     float: left;
@@ -174,7 +180,7 @@ header.pix-heading-title h2 {
 
 .pix-post-title {
     color: #212121;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     line-height: 1.4;
     font-weight: 500;
@@ -201,7 +207,7 @@ header .pix-page-title {
 .widget {
     float: left;
     width: 100%;
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 10px 0px;
 }
 .pix-bgcolrhvr:hover {
     color: #fff !important;
@@ -339,11 +345,16 @@ div[class*="col-md-"] .element_size_100  {
 }
 .post-options {
     float: left;
-    width: 100%;
+    /*width: 100%;*/
     margin: 0;
     position: relative;
     z-index: 1;
 }
+.post_information {
+    display: flex;
+    justify-content:space-between;
+}
+
 .pix-content-wrap .post-options li{
     float: left;
 }
@@ -1240,10 +1251,10 @@ Inner Section
 */
 
 #innermain .container .left-side {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     background-color: #fff;
-    width: 69%;
-    margin-right: 1%;
+    width: 70%;
+
 }
 .left-side iframe {
     margin: 0 auto;
@@ -1610,8 +1621,8 @@ Footer Section
     float: left;
     width: 39px;
     height: 39px;
-    border: 1px solid #2e2e2e;
-    color: #2e2e2e;
+    border: 1px solid #a09999;
+    color: #989090;
     border-radius: 100%;
     padding: 6px 0px;
     -webkit-transition: all .25s ease;
@@ -3972,18 +3983,18 @@ div.wpcf7{
 .pix-label{
     float: left;
     font-family: 'Fjalla One', sans-serif;
-    margin: 0px 0px 25px -15px;
+    margin: 0 0 15px -5px;
 	position:relative;
 }
 .pix-label:before{
-	position:absolute;
-	content:"";
-	top:33px;
-	left:0;
-	width: 0;
-	height: 0;
-	border-top: 14px solid #212121;
-	border-left: 15px solid transparent;
+    position:absolute;
+    content:"";
+    top:31px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid #212121;
+    border-left: 5px solid transparent;
 }
 .pix-tittle{
     background-color: #5ae392;
@@ -4091,7 +4102,7 @@ div.wpcf7{
 .blog-listing-text{
     float: right;
     width: 60%;
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 10px;
     -webkit-box-sizing:border-box;
      -moz-box-sizing:border-box;
       box-sizing:border-box;
@@ -4099,8 +4110,7 @@ div.wpcf7{
 .blog-listing-text article{
     float: left;
     width: 100%;
-    padding: 17px 0px 0px 0px;
-    /*margin: 17px 0px 0px 0px;*/
+    padding: 10px 0px 0px 0px;
     /*border-top: 1px solid #ededed;*/
 }
 span.px-comments i{
@@ -4136,7 +4146,7 @@ span.px-comments i{
     font-size: 10px;
 }
 .text p {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 .post-categories li a:hover {
     background-color: #4e5d4b;
@@ -4159,7 +4169,7 @@ span.px-comments i{
     display: flex;
     justify-content: flex-end;
     color: #cdcdcd;
-    width: 100%;
+    /*width: 100%;*/
 }
 .blog-headlines .post-options li.px-comments a:before{
     content: '';
@@ -5219,7 +5229,8 @@ span.px-count{
     left: 0px;
     bottom: 0px;
     width: 100%;
-    padding: 19px;
+    padding: 10px 20px;
+    background: #24271fab;
 }
 .blog-vertical article .caption h2{
     font-size: 18px;
@@ -5473,11 +5484,14 @@ header #mainheader {
     display: flex;
 }
 article .avatar {
-    width: auto;
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
 }
 article img {
     width: 100%;
     max-height: 480px;
+    min-height: 480px;
 }
 .pix-feature article {
     padding-top: 20px;
@@ -5533,7 +5547,7 @@ article img {
     padding-bottom: 5px;
 }
 .title_block--links {
-    padding: 0 10px;
+    padding: 0 0 0 10px;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -5659,26 +5673,32 @@ article img {
 @media (max-width: 1200px) {
     .main .container .container, #mainheader .container {
         width: 100%;
-        padding:0;
+        padding: 0;
         margin: 0;
     }
+
     .blog-vertical .cycle-slideshow {
         /*min-height:440px;*/
     }
+
     #wrappermain-pix.wrapper_boxed {
         width: 100%;
     }
+
     #innermain .container .left-side, #innermain .container .right-side {
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
     }
+
     .row {
         margin: 0 !important;
     }
 
+    .title_block--links {
+        padding:0 10px 0 10px;
+    }
 }
-
 @media (max-width: 991px) {
     #wrappermain-pix.wrapper_boxed {
         margin-bottom: 0;
@@ -5813,6 +5833,9 @@ article img {
     #mainheader {
         position: absolute;
     }
+    article img {
+        min-height: auto;
+    }
 }
 
 @media (max-width: 600px) {
@@ -5828,12 +5851,14 @@ article img {
     .widget .pix-section-title {
         padding:0 ;
     }
+
 }
 @media (max-width: 480px) {
     .widget.widget-recent-blog .pix-section-title {
         font-size: 1.5rem;
         width: 100%;
         text-align: center;
+        padding: 10px 0;
     }
     .widget.widget-recent-blog article {
         display: flex;
@@ -5841,6 +5866,7 @@ article img {
         align-items: center;
         padding:0;
     }
+
     .widget article img {
         max-width: 300px;
         min-height: 70px;
@@ -5853,7 +5879,10 @@ article img {
         padding: 20px 0 2px;
     }
     .widget.widget-recent-blog {
-        padding: 20px 10px;
+        padding: 20px 0;
+    }
+    .widget.widget-recent-blog article .text {
+        padding: 5px 10px;
     }
     .front_page-article img {
         min-width: 100%;
@@ -5871,12 +5900,23 @@ article img {
     .pix-content-wrap > .detail_text p {
         padding:  10px 20px;
     }
+    .blog-listing-text article {
+        padding:10px 0;
+    }
+    .text {
+        padding: 0 10px;
+    }
 }
 @media (max-width: 768px) {
     .blog-vertical article {
         height: auto;
     }
-    .blog-listing-text {
+        .blog-listing-text {
         padding:0;
+    }
+}
+@media (max-width: 400px) {
+    .widget article img {
+        max-width: 100%;
     }
 }

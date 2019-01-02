@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
 .widget .pix-section-title{
 	font-size:18px;
-	padding-left: 10px;
+	width: 100%;
+	text-align: center;
 	padding-top: 10px;
 }
-
 
 .widget_price_filter .price_slider_amount > input,
 .widget_nav_menu .menu-main-menu-container,
@@ -559,7 +559,7 @@
 }
 .widget-recent-blog article:last-of-type{
 	margin-bottom: 0px;
-	padding:0;
+	/*padding:0;*/
 	border-bottom:none;
 }
 .widget-recent-blog article figure{
@@ -990,5 +990,10 @@ Fixture
 	 #respond {
 		 margin-bottom: 0;
 	 }
-
  }
+@media (max-width: 480px) {
+
+	.widget-recent-blog article:last-of-type {
+		padding: 0px;
+	}
+}
