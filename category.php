@@ -67,6 +67,7 @@ $args = [
 $countries = get_categories($args);
 $resultApi =getApi($this_cat_slug);
     get_header();
+
 ?>
 
     <div class="container">
@@ -110,7 +111,8 @@ $resultApi =getApi($this_cat_slug);
                                 <div id="blog-headlines2" class="blog-headlines tab-pane fade in active">
                                     <div class="pix-feature">
                                         <?php
-                                            if ($resultApi and count($resultApi) > 0):
+
+                                            if ($resultApi and count($resultApi) > 0 and $resultApi['statusCode'] ==200):
                                         ?>
                                                 <table class="standings">
                                                     <tr>
@@ -220,7 +222,6 @@ $resultApi =getApi($this_cat_slug);
                 <?php
 
                 $res = getCompetitionDetails($this_cat_slug);
-                var_dump($res);
 
                 ?>
             </div>

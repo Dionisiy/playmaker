@@ -16,7 +16,7 @@
 
                 <?php if ($countries) : ?>
                     <?php foreach ($countries as $country) : ?>
-                        <a href="/country/news/<?= $country->slug ?>">
+                        <a href="/news/<?= $country->slug ?>">
                             <div class="item">
                                 <?= get_term_meta($country->cat_ID, 'cat_meta_cat_logo', true) ?>
                                 <p><?= $country->name ?></p>

@@ -18,7 +18,6 @@
     ];
     $countries = get_categories($args);
 ?>
-
     <div class="container">
         <div class="row">
             <div class="col-md-9 left-side">
@@ -38,9 +37,15 @@
                     <div class='subtitle'>
                         <h1 class='pix-page-title'>
                             <?php
-                            echo get_the_title( $post );
+                                    echo get_the_title( $post );
                             ?>
                         </h1>
+                        <?php
+                            echo  getSopcastMetaLinks($post->ID);
+                            echo  getAcestreamMetaLinks($post->ID);
+                            echo  getPlayerMetaLinks($post->ID);
+                        ?>
+                        <video src=”http://cdn.livetv.sx/webplayer.php?t=ifrx&c=1086897&lang=en” width=”640px” height=”380px” autoplay/>
 
                     </div>
                     <div class="blog blog_detail">
@@ -55,12 +60,13 @@
                                             <time datetime="<?php echo $post->post_date_gmt ?>"><?php echo $post->post_date_gmt ?></time>
                                         </li>
                                         <li>
-                                            <span>in</span> <a href="/country/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> | <?php echo $categoryData[0]->name ?></a>
+                                            <span>in</span> <a href="/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> | <?php echo $categoryData[0]->name ?></a>
                                         </li>
                                         <li class="views">
                                             <span>
                                                  <?php echo getPostViews(get_the_ID()); ?>
                                                  <?php echo  get_post_meta ($post->ID,'post_meta_name',true) ?>
+
                                             </span>
 
                                             <svg id="icon-views-mini" viewBox="0 0 32 32" width="100%" height="100%">

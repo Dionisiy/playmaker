@@ -34,7 +34,7 @@ $categoryData = get_the_category($post->ID);
                                     <ul class="post-options">
 
                                         <li>
-                                            <span>in</span> <a href="/country/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> | <?php echo $categoryData[0]->name ?></a>
+                                            <span>in</span> <a href="/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> | <?php echo $categoryData[0]->name ?></a>
                                         </li>
                                     </ul>
                                     <p>

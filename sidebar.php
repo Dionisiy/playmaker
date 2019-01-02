@@ -37,7 +37,9 @@
         <div class="sidebar_wrapper">
             <div class="widget widget-recent-blog">
                 <div class="pix-heading-title">
-                    <h2 class="pix-section-title heading-color"> Последние трансляции</h2>
+                    <?php if ($news_query->have_posts()): ?>
+                        <h2 class="pix-section-title heading-color"> Последние трансляции</h2>
+                    <?php endif; ?>
                     <?php
                         while ( $news_query->have_posts() ) : $news_query->the_post();
                     ?>

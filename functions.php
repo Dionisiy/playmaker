@@ -367,13 +367,18 @@ function getFlag()
     $countries = ['Англия', 'Испания'];
     foreach ($categories as $category) {
         # code...
-    
-    if (in_array($category->name,$countries)){
-        $link = get_category_link($category->cat_ID);
-        $flag = get_term_meta($category->cat_ID, 'cat_meta_cat_logo', true);
-        echo "<a href='{$link}'>{$flag}</a>";
+        if (in_array($category->name,$countries)){
+            $link = get_category_link($category->cat_ID);
+            $flag = get_term_meta($category->cat_ID, 'cat_meta_cat_logo', true);
+            echo "<a href='{$link}'>{$flag}</a>";
+        }
     }
 }
+function getCategoryFlag($catId)
+{
+    $link = get_category_link($catId);
+    $flag = get_term_meta($catId, 'cat_meta_cat_logo', true);
+    echo "<a href='{$link}'>{$flag}</a>";
 }
 
 
@@ -784,13 +789,13 @@ function getTableByDate ($resultApi) {
                         </td>
                         <td style="text-align:left;">
                             <?php
-                            if($team['AwayTeamScore'] &&  $team['HomeTeamScore']):
-                                echo $team['HomeTeamScore']  ." - ". $team['AwayTeamScore']  ;
-                            else:
-                                echo $team['HomeTeamName']
-                                    ." - ".
-                                    $team['AwayTeamName'];
-                            endif;
+                                if($team['AwayTeamScore'] &&  $team['HomeTeamScore']):
+                                    echo $team['HomeTeamScore']  ." - ". $team['AwayTeamScore']  ;
+                                else:
+                                    echo $team['HomeTeamName']
+                                        ." - ".
+                                        $team['AwayTeamName'];
+                                endif;
                             ?>
                         </td>
                     </tr>
@@ -801,5 +806,58 @@ function getTableByDate ($resultApi) {
             </table>
             <?php
         endif;
+}
 
+
+// кастомные поля для трансляций (ссылки)
+
+function getSopcastMetaLinks($post_id) {
+    $sopcastLinks = [];
+    $html = "";
+    for($i = 0; $i< 6; $i++) {
+
+        $sopcastLinks[$i] = get_post_meta($post_id, "sopcast[$i]");
+    }
+    $html .="<div class='sopcast_links'><ul>";
+    foreach ($sopcastLinks as $index => $value) {
+        if ($value[0] !== '') {
+            $html .= "<li><a href='$value[0]'>ссылка $index</a> </li> ";
+        }
+    }
+    $html .="</ul></div> ";
+    return $html;
+}
+
+function getAcestreamMetaLinks($post_id) {
+    $acestreamLinks = [];
+    $html = "";
+    for($i = 0; $i< 6; $i++) {
+
+        $acestreamLinks[$i] = get_post_meta($post_id, "acestream[$i]");
+    }
+    $html .="<div class='acestream_links'><ul>";
+    foreach ($acestreamLinks as $index => $value) {
+        if ($value[0] !== '') {
+            $html .="<li><a href='$value[0]'>ссылка $index</a> </li> ";
+        }
+    }
+    $html .="</ul></div> ";
+    return $html;
+}
+
+function getPlayerMetaLinks($post_id) {
+    $playerLinks = [];
+    $html = "";
+    for($i = 0; $i< 6; $i++) {
+        $playerLinks[$i] = get_post_meta($post_id, "player[$i]");
+    }
+    $html .="<div class='playert_links'><ul>";
+    foreach ($playerLinks as $index => $value) {
+        if ($value[0] !== '') {
+            var_dump($value[0]);
+            $html .= "<li><a href='$value[0]'>ссылка $index</a> </li> ";
+        }
+    }
+    $html .="</ul></div> ";
+    return $html;
 }

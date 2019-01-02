@@ -1,4 +1,5 @@
 <?php
+$query = $wp_query;
 
 $variable =  $_SERVER['REQUEST_URI'];
 $variable = explode("/", $variable);
@@ -16,9 +17,11 @@ $args = array(
     'post_type' =>$post_type ,
      'category_name' =>$this_cat_slug
 );
+if (isset($query->query['paged'])) {
+    $args['paged'] = $query->query['paged'];
+}
 $query = new WP_Query($args);
 	get_header();
-    var_dump($this_cat_slug);
 
 ?>
     <div class="container">
@@ -62,7 +65,7 @@ $query = new WP_Query($args);
                                                                 <ul class="post-options post-categories">
                                                                     <?php foreach ($categoryData as $cat): ?>
                                                                         <li>
-                                                                            <a href="/country/<?php echo $post->post_type ."/".  $cat->slug ?>" rel="category tag">
+                                                                            <a href="/<?php echo $post->post_type ."/".  $cat->slug ?>" rel="category tag">
                                                                                 <?php echo $cat->name ?>
                                                                             </a>
                                                                         </li>

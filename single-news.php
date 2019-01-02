@@ -52,7 +52,7 @@
                                             <time datetime="<?php echo $post->post_date_gmt ?>"><?php echo $post->post_date_gmt ?></time>
                                         </li>
                                         <li>
-                                            <a href="/country/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> <?php echo $categoryData[0]->name ?></a>
+                                            <a href="/<?php echo get_post_type($post) ?>/<?php echo $categoryData[0]->slug ?>" rel="tag"> <?php echo $categoryData[0]->name ?></a>
                                         </li>
                                         <li class="views">
                                             <span>
